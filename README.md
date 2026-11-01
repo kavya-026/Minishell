@@ -1,7 +1,9 @@
 Mini Shell in C
+
 A Linux-based Mini Shell implemented in C to understand how a command-line shell works internally using process creation, system calls, signal handling, command parsing, built-in commands, foreground/background execution, and prompt customization.
 
 Project Overview
+
 This project implements a simplified Linux shell that continuously:
 
 Displays a shell prompt.
@@ -11,16 +13,21 @@ Identifies built-in or external commands.
 Executes the command.
 Manages foreground/background processes.
 Returns to the prompt and waits for the next command.
+
 The shell starts with the default prompt:
 
 minishell$
+
 The prompt can also be changed dynamically using:
 
 PS1=MyShell$
+
 After changing it:
 
 MyShell$
+
 Features
+
 Custom shell prompt
 Dynamic prompt modification using PS1=
 External command execution
@@ -37,6 +44,7 @@ Child-process management using waitpid()
 File and I/O operations
 Environment variable access
 Shell exit functionality
+
 Technologies Used
 C Programming
 Linux / POSIX
@@ -76,7 +84,15 @@ The shell uses signals together with process-management functions to control for
 Important Linux APIs
 Function / API Purpose
 
-fork() Creates a child process execvp() / execve() Executes an external program waitpid() Waits for a child process chdir() Changes the working directory getcwd() Gets the current working directory kill() Sends a signal to a process signal() / signal-related handling Handles process signals getpid() Gets the current process ID getenv() Retrieves environment variables exit() Terminates the shell
+fork() Creates a child process execvp() / execve() 
+Executes an external program 
+waitpid() Waits for a child process 
+chdir() Changes the working directory 
+getcwd() Gets the current working directory 
+kill() Sends a signal to a process signal() / signal-related handling Handles process signals 
+getpid() Gets the current process ID
+getenv() Retrieves environment variables 
+exit() Terminates the shell
 
 Key Challenges
 Implementing command parsing and distinguishing different command types.
@@ -117,12 +133,15 @@ The project is intended for a Linux/POSIX environment.
 Project Structure
 Mini-Shell/
 │
-├── MINISHELL.h
+├── main.h
 ├── main.c
-├── internal_cmd.c
-├── external_cmd.c
-├── external_cmd.txt
+├── fg_bg
+├── get_cmd
+├── scan_input
+├── execution
+├── external
 ├── README.md
+
 
 Project Objective
 The objective of this project was to build a simplified Linux shell from scratch in C and gain hands-on experience with process creation, program execution, signal handling, job control, command parsing, system calls, and shell prompt management.
